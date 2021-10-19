@@ -17,7 +17,7 @@ namespace Address_Book_ADO.NET
                 using (this.connection)
                 {
 
-                    SqlCommand command = new SqlCommand("SpAddPersonDetails", this.connection);
+                    SqlCommand command = new SqlCommand("SpAddPersonDetail", this.connection);
                     command.CommandType = System.Data.CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@ID", model.ID);
                     command.Parameters.AddWithValue("@FirstName", model.FirstName);
