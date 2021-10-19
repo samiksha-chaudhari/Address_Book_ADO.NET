@@ -16,7 +16,7 @@ namespace Address_Book_ADO.NET
             {
                 using (this.connection)
                 {
-
+                    this.connection.Open();
                     SqlCommand command = new SqlCommand("SpAddPersonDetail", this.connection);
                     command.CommandType = System.Data.CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@ID", model.ID);
@@ -30,9 +30,9 @@ namespace Address_Book_ADO.NET
                     command.Parameters.AddWithValue("@Email", model.Email);
                     command.Parameters.AddWithValue("@AddressBookName", model.AddressBookName);
                     command.Parameters.AddWithValue("@Type", model.Type);
-                    this.connection.Open();
+                    
                     var result = command.ExecuteNonQuery();
-                    this.connection.Close();
+                   // this.connection.Close();
                     if (result != 0)
                     {
 
